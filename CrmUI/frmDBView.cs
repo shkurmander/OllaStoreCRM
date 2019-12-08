@@ -1,4 +1,5 @@
-﻿using CrmBL.Model;
+﻿using CrmBL.Controller;
+using CrmBL.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,16 +17,16 @@ namespace CrmUI
     //public partial class frmDBView : Form
     {
         CrmContext db = new CrmContext();
-       /* public frmDBView()
+        public frmDBView()
         {
             InitializeComponent();
             dataGridView.DataSource = db.Customers.Local.ToBindingList();
         }
-        */
+        
        public frmDBView(DbSet<T> data)
         {
             InitializeComponent();
-            dataGridView.DataSource = data.Local.ToBindingList();
+            dataGridView.DataSource = data.Local.ToBindingList();            
         }
         
         private void BtnBack_Click(object sender, EventArgs e)

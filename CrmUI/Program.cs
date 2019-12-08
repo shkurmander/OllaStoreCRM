@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrmBL.Controller;
 
 namespace CrmUI
 {
@@ -14,9 +15,11 @@ namespace CrmUI
         [STAThread]
         static void Main()
         {
+            //var io = new IOController();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());
+            //Application.Run(new frmMain(io));
         }
     }
 }

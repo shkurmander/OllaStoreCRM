@@ -1,4 +1,5 @@
 ﻿
+using CrmBL.Controller;
 using CrmBL.Model;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace CrmUI
     public partial class frmMain : Form
     {
         CrmContext db;
+        //private IOController io;
+
         public frmMain()
         {
             InitializeComponent();
