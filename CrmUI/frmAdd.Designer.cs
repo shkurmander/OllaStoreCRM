@@ -183,7 +183,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(214, 247);
+            this.btnOk.Location = new System.Drawing.Point(74, 254);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 19;
@@ -193,12 +193,13 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(77, 247);
+            this.btnCancel.Location = new System.Drawing.Point(253, 254);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 20;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // frmAdd
             // 

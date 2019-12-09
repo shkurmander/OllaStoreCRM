@@ -21,13 +21,14 @@ namespace CrmUI
         {
             InitializeComponent();
             //dataGridView.DataSource = db.Customers.Local.ToBindingList();
+            UpdateGrid();
         }
         
        public frmDBView(DbSet<T> data)
         {
             InitializeComponent();
-            CrmContext db = new CrmContext();
-            //            MessageBox.Show(data.Local.First);
+            /*CrmContext db = new CrmContext();
+                        MessageBox.Show(data.Local.First);
             //var first = data.Local.First();
             db.Database.Log = Console.Write;
             dataGridView.Columns.Add("ID","Id");
@@ -38,9 +39,11 @@ namespace CrmUI
             dataGridView.Columns.Add("Address", "Адрес");
             dataGridView.Columns.Add("Discount", "Скидка");
 
-            //dataGridView.Rows.Add(db.Customers.FirstOrDefault());
-            
-            dataGridView.DataSource = data.Local.ToBindingList();            
+            dataGridView.Rows.Add(db.Customers.FirstOrDefault());*/
+
+            UpdateGrid();
+
+
         }
         
         private void BtnBack_Click(object sender, EventArgs e)
@@ -52,6 +55,7 @@ namespace CrmUI
         {
             var formAdd = new frmAdd();
             formAdd.ShowDialog();
+            
             //var customer = new Customer()
             //{
             //    Address = "Новосибирск, пк-т, Красный 5",
@@ -64,6 +68,17 @@ namespace CrmUI
             //db.Customers.Add(customer);
             //db.SaveChanges();
 
+        }
+
+        private void UpdateGrid()
+        {
+            var db = IOController.GetContext();
+            dataGridView.DataSource = db.Customers.Local.ToBindingList();
+        }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateGrid();
         }
     }
 }

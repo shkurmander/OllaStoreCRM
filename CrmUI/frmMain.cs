@@ -23,7 +23,7 @@ namespace CrmUI
         {
             InitializeComponent();
             
-            //lbTest.Text = db.Customers.Local.FirstOrDefault().FirstName;
+            lbTest.Text = db.Customers.Local.FirstOrDefault().FirstName;
         }
 
         private void CustomersToolStripMenuItem_Click(object sender, EventArgs e)
