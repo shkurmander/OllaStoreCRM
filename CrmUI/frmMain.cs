@@ -17,17 +17,19 @@ namespace CrmUI
 {
     public partial class frmMain : Form
     {
-        CrmContext db;
-        //private IOController io;
+        CrmContext db = IOController.GetContext();
 
         public frmMain()
         {
             InitializeComponent();
-            db = new CrmContext();
+            
+            //lbTest.Text = db.Customers.Local.FirstOrDefault().FirstName;
         }
 
         private void CustomersToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //var test = db.Database.Log;
+            //MessageBox.Show(db.Customers.Local.FirstOrDefault().FirstName);
             var viewer = new frmDBView<Customer>(db.Customers);
            // var viewer = new frmDBView();
             viewer.ShowDialog();

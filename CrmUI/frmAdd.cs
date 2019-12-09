@@ -39,9 +39,10 @@ namespace CrmUI
                 if (rbtnFemale.Checked) customer.Gender = 2;
                 else
                    customer.Gender = 3;
-        
-            
-            
+
+            IOController.AddCustomer(customer);
+
+            this.Close();
             
         }
     }

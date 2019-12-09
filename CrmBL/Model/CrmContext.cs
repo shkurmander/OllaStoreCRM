@@ -9,7 +9,7 @@ namespace CrmBL.Model
 {
     public class CrmContext : DbContext
     {
-        public int CalculationId { get; set; }
+        
         public CrmContext() : base("DBConnect") { }
 
         public DbSet<Customer> Customers { get; set; }
@@ -18,5 +18,7 @@ namespace CrmBL.Model
         public DbSet<Product>   Products { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
         public DbSet<Source> Sources { get; set; }
+        public DbSet<Calculation> Calculations { get; set; }
+        public DbSet<Position> Positions { get; set; }
     }
 }

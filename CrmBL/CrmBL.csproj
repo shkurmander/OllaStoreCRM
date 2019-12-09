@@ -56,6 +56,11 @@
     <Compile Include="Migrations\201911201800168_crmbl1.Designer.cs">
       <DependentUpon>201911201800168_crmbl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912091541389_09\12 Mig1.cs" />
+    <Compile Include="Migrations\201912091542316_Mig1.cs" />
+    <Compile Include="Migrations\201912091542316_Mig1.Designer.cs">
+      <DependentUpon>201912091542316_Mig1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Calculation.cs" />
     <Compile Include="Model\Customer.cs" />
@@ -75,6 +80,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201911201800168_crmbl1.resx">
       <DependentUpon>201911201800168_crmbl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912091542316_Mig1.resx">
+      <DependentUpon>201912091542316_Mig1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -16,6 +16,14 @@ namespace CrmBL.Controller
             db.Customers.Add(record);
             db.SaveChanges();
         }
+        public static CrmContext GetContext()
+        {
+            var db = new CrmContext();
+            db.Customers.Load();
+            Console.WriteLine(db.Customers.Local.FirstOrDefault().FirstName);
+            return db; 
+        }
+
         static IOController()
         {
           

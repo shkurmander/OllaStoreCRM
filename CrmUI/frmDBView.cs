@@ -16,16 +16,30 @@ namespace CrmUI
     public partial class frmDBView<T> : Form where T : class
     //public partial class frmDBView : Form
     {
-        CrmContext db = new CrmContext();
+       
         public frmDBView()
         {
             InitializeComponent();
-            dataGridView.DataSource = db.Customers.Local.ToBindingList();
+            //dataGridView.DataSource = db.Customers.Local.ToBindingList();
         }
         
        public frmDBView(DbSet<T> data)
         {
             InitializeComponent();
+            CrmContext db = new CrmContext();
+            //            MessageBox.Show(data.Local.First);
+            //var first = data.Local.First();
+            db.Database.Log = Console.Write;
+            dataGridView.Columns.Add("ID","Id");
+            dataGridView.Columns.Add("FristName", "Имя");
+            dataGridView.Columns.Add("LastName", "Фамилия");
+            dataGridView.Columns.Add("Gender", "Пол");
+            dataGridView.Columns.Add("Country", "Страна");
+            dataGridView.Columns.Add("Address", "Адрес");
+            dataGridView.Columns.Add("Discount", "Скидка");
+
+            //dataGridView.Rows.Add(db.Customers.FirstOrDefault());
+            
             dataGridView.DataSource = data.Local.ToBindingList();            
         }
         
