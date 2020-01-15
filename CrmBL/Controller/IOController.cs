@@ -10,7 +10,7 @@ namespace CrmBL.Controller
 {
     public static class IOController
     {
-        
+        public static string test { get; set; }
         public static void AddCustomer(Customer record) 
         {
             CrmContext db = new CrmContext();
@@ -20,8 +20,8 @@ namespace CrmBL.Controller
         public static CrmContext GetContext()
         {
             var db = new CrmContext();
-            db.Customers.Load();
-            Console.WriteLine(db.Customers.Local.FirstOrDefault().FirstName);
+            //db.Customers.Load();
+            //Console.WriteLine(db.Customers.Local.FirstOrDefault().FirstName); //тест чтения из бд
             return db; 
         }
 

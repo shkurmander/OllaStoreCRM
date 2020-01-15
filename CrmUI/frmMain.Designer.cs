@@ -40,7 +40,6 @@
             this.типыТоваровToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.материалыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbTest = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,15 +133,6 @@
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             // 
-            // lbTest
-            // 
-            this.lbTest.AutoSize = true;
-            this.lbTest.Location = new System.Drawing.Point(247, 93);
-            this.lbTest.Name = "lbTest";
-            this.lbTest.Size = new System.Drawing.Size(64, 13);
-            this.lbTest.TabIndex = 1;
-            this.lbTest.Text = "TEST_OUT";
-            // 
             // frmMain
             // 
             this.AccessibleName = "";
@@ -151,7 +141,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lbTest);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
@@ -177,7 +166,6 @@
         private System.Windows.Forms.ToolStripMenuItem типыТоваровToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem материалыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private System.Windows.Forms.Label lbTest;
     }
 }
 

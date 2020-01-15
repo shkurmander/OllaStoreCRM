@@ -53,26 +53,27 @@ namespace CrmUI
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            var formAdd = new frmAdd();
-            formAdd.ShowDialog();
-            
-            //var customer = new Customer()
-            //{
-            //    Address = "Новосибирск, пк-т, Красный 5",
-            //    FirstName = "Анна",
-            //    LastName = "Попкина",
-            //    Gender = 1,
-            //    Country = "Россия",
-            //    Disqount = 2
-            //};
-            //db.Customers.Add(customer);
-            //db.SaveChanges();
-
+            var frmAdd = new frmAdd();
+            frmAdd.FormClosing += new FormClosingEventHandler(frmAddClosingHandler);
+            frmAdd.ShowDialog();
+           
         }
 
-        private void UpdateGrid()
+        private void frmAddClosingHandler(object sender, EventArgs e)
+        {
+            UpdateGrid();
+        }
+
+        public void UpdateGrid()
         {
             var db = IOController.GetContext();
+            switch (UIVars.TableName)
+            {
+                case "Customers": db.Customers.Load(); break;
+                default:
+                    break;
+            }
+            
             dataGridView.DataSource = db.Customers.Local.ToBindingList();
         }
 

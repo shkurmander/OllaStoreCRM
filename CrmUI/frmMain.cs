@@ -22,15 +22,19 @@ namespace CrmUI
         public frmMain()
         {
             InitializeComponent();
+            /*lbTest.Text = "эйуася";
+            IOController.test = lbTest.Text;
+            MessageBox.Show(IOController.test);*/
             
-            lbTest.Text = db.Customers.Local.FirstOrDefault().FirstName;
         }
 
         private void CustomersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //var test = db.Database.Log;
             //MessageBox.Show(db.Customers.Local.FirstOrDefault().FirstName);
+            UIVars.TableName = "Customers";
             var viewer = new frmDBView<Customer>(db.Customers);
+           
            // var viewer = new frmDBView();
             viewer.ShowDialog();
         }

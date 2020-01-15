@@ -15,5 +15,7 @@ namespace CrmBL.Model
         virtual public ICollection<Source> Source { get; set; }
         public DateTime TimeStamp { get; set; }
         public Calculation Calculations { get; set; }
+        
+        
     }
 }

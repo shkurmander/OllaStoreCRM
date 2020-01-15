@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\IOController.cs" />
+    <Compile Include="Controller\UIVars.cs" />
     <Compile Include="Migrations\201911201800168_crmbl1.cs" />
     <Compile Include="Migrations\201911201800168_crmbl1.Designer.cs">
       <DependentUpon>201911201800168_crmbl1.cs</DependentUpon>
