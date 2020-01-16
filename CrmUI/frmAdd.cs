@@ -40,7 +40,7 @@ namespace CrmUI
                 else
                    customer.Gender = 3;
 
-            IOController.AddCustomer(customer);
+            IOController.AddRecord(customer, "Customers");
 
             
             this.Close();

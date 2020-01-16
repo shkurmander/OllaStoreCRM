@@ -33,9 +33,18 @@ namespace CrmUI
             //var test = db.Database.Log;
             //MessageBox.Show(db.Customers.Local.FirstOrDefault().FirstName);
             UIVars.TableName = "Customers";
-            var viewer = new frmDBView<Customer>(db.Customers);
+            var viewer = new frmDBView();
            
            // var viewer = new frmDBView();
+            viewer.ShowDialog();
+        }
+
+        private void SourcesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UIVars.TableName = "Sources";
+            
+            var viewer = new frmDBView();
+                     
             viewer.ShowDialog();
         }
     }

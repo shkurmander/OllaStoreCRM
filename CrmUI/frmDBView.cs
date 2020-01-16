@@ -13,8 +13,8 @@ using System.Windows.Forms;
 
 namespace CrmUI
 {
-    public partial class frmDBView<T> : Form where T : class
-    //public partial class frmDBView : Form
+    //public partial class frmDBView<T> : Form where T : class
+    public partial class frmDBView : Form
     {
        
         public frmDBView()
@@ -24,7 +24,7 @@ namespace CrmUI
             UpdateGrid();
         }
         
-       public frmDBView(DbSet<T> data)
+       /*public frmDBView(DbSet<T> data)
         {
             InitializeComponent();
             /*CrmContext db = new CrmContext();
@@ -39,12 +39,12 @@ namespace CrmUI
             dataGridView.Columns.Add("Address", "Адрес");
             dataGridView.Columns.Add("Discount", "Скидка");
 
-            dataGridView.Rows.Add(db.Customers.FirstOrDefault());*/
+            dataGridView.Rows.Add(db.Customers.FirstOrDefault());
 
             UpdateGrid();
 
 
-        }
+        }*/
         
         private void BtnBack_Click(object sender, EventArgs e)
         {
@@ -53,9 +53,23 @@ namespace CrmUI
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            var frmAdd = new frmAdd();
-            frmAdd.FormClosing += new FormClosingEventHandler(frmAddClosingHandler);
-            frmAdd.ShowDialog();
+            
+            switch (UIVars.TableName)
+            {
+                case "Customers":
+                    var frmAdd = new frmAdd();
+                    frmAdd.FormClosing += new FormClosingEventHandler(frmAddClosingHandler);
+                    frmAdd.ShowDialog(); break;
+                case "Sources":
+                    var frmAddSource = new frmAddSource();
+                    frmAddSource.FormClosing += new FormClosingEventHandler(frmAddClosingHandler);
+                    frmAddSource.ShowDialog(); break;
+
+
+                default: throw new ArgumentException("Некоррректное имя таблицы");
+
+            }
+            
            
         }
 
@@ -69,12 +83,19 @@ namespace CrmUI
             var db = IOController.GetContext();
             switch (UIVars.TableName)
             {
-                case "Customers": db.Customers.Load(); break;
+                case "Customers":
+                    db.Customers.Load();
+                    dataGridView.DataSource = db.Customers.Local.ToBindingList();
+                    break;
+                case "Sources":
+                    db.Sources.Load();
+                    dataGridView.DataSource = db.Sources.Local.ToBindingList();
+                    break;
                 default:
                     break;
             }
             
-            dataGridView.DataSource = db.Customers.Local.ToBindingList();
+            
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e)

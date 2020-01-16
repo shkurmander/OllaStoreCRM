@@ -83,6 +83,12 @@
     <Compile Include="frmAdd.Designer.cs">
       <DependentUpon>frmAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddSource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSource.Designer.cs">
+      <DependentUpon>frmAddSource.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDBView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAdd.resx">
       <DependentUpon>frmAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSource.resx">
+      <DependentUpon>frmAddSource.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDBView.resx">
       <DependentUpon>frmDBView.cs</DependentUpon>

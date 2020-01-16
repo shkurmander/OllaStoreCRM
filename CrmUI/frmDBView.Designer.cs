@@ -1,7 +1,7 @@
 ﻿namespace CrmUI
 {
-    partial class frmDBView <T> where T : class
-    //partial class frmDBView
+    //partial class frmDBView <T> where T : class
+    partial class frmDBView
     {
         /// <summary>
         /// Required designer variable.
